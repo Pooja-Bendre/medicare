@@ -1871,4 +1871,100 @@ section {
         overflow-x: auto;
         flex-wrap: nowrap;
     }
+
+}
+/* ============================================
+   EMERGENCY SOS - DARK MODE FIX
+   Add this to your styles.css file
+   ============================================ */
+
+/* Fix Emergency Section Background in Dark Mode */
+[data-theme="dark"] .emergency-section {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(238, 90, 111, 0.15) 100%);
+}
+
+/* Fix Emergency Container in Dark Mode */
+[data-theme="dark"] .emergency-container {
+    background: transparent;
+}
+
+/* Fix Emergency Header Text in Dark Mode */
+[data-theme="dark"] .emergency-header h2,
+[data-theme="dark"] .emergency-header p {
+    color: var(--text-primary);
+}
+
+/* Fix Emergency Buttons in Dark Mode */
+[data-theme="dark"] .emergency-btn {
+    background: var(--bg-secondary);
+    border: 2px solid var(--color-danger);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .emergency-btn:hover {
+    background: var(--danger-gradient);
+    color: white;
+    border-color: transparent;
+}
+
+/* Fix Emergency Icon Large in Dark Mode */
+[data-theme="dark"] .emergency-icon-large {
+    background: var(--danger-gradient);
+    color: white;
+}
+
+/* Fix Emergency Info Card in Dark Mode */
+[data-theme="dark"] .emergency-info {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .emergency-info h3 {
+    color: var(--text-primary);
+}
+
+/* Fix Contact Items in Dark Mode */
+[data-theme="dark"] .contact-item {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-item strong {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-item span {
+    color: var(--text-secondary);
+}
+
+/* Fix Emergency Grid in Dark Mode */
+[data-theme="dark"] .emergency-grid {
+    color: var(--text-primary);
+}
+
+/* Ensure Emergency Section is Always Visible */
+.emergency-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix for Emergency Button Icons */
+[data-theme="dark"] .emergency-btn i {
+    color: var(--color-danger);
+}
+
+[data-theme="dark"] .emergency-btn:hover i {
+    color: white;
+}
+
+/* Additional Contrast Fix for Dark Mode */
+[data-theme="dark"] .emergency-section * {
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Make sure emergency text is readable */
+[data-theme="dark"] .emergency-container h2,
+[data-theme="dark"] .emergency-container h3,
+[data-theme="dark"] .emergency-container p {
+    color: var(--text-primary) !important;
 }
