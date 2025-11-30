@@ -8,7 +8,7 @@
    CONFIGURATION & API KEYS
    ============================================ */
 const CONFIG = {
-  GEMINI_API_KEY: "AIzaSyD9qijxyqPO02Y6r0rfKqn9Vll5ZKkWXD4", // Replace with your key
+  GEMINI_API_KEY: "your_gemini_api_key", // Replace with your key
   AWS_REGION: "us-east-1",
   API_ENDPOINTS: {
     gemini:
@@ -1690,4 +1690,5 @@ if (typeof module !== "undefined" && module.exports) {
     sendMessage,
   };
 }
+
 
