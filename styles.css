@@ -1968,3 +1968,108 @@ section {
 [data-theme="dark"] .emergency-container p {
     color: var(--text-primary) !important;
 }
+
+/* ============================================
+   IMAGE IN CHAT - BETTER STYLING
+   Add this to styles.css (at the end)
+   ============================================ */
+
+/* Image messages in chat */
+.message-content img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 12px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--border-color);
+    object-fit: cover;
+}
+
+.message-content img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+/* User uploaded images */
+.user-message .message-content img {
+    border-color: var(--color-primary);
+}
+
+/* Loading state for image upload */
+.image-uploading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: var(--glass-bg);
+    border-radius: 12px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.image-uploading::before {
+    content: "📤";
+    font-size: 1.5rem;
+}
+
+/* Image caption styling */
+.message-content img + p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.message-content img + p strong {
+    color: var(--text-primary);
+}
+
+.message-content img + p em {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .message-content img {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .message-content img:hover {
+    border-color: var(--color-primary);
+}
+
+/* Responsive image sizing */
+@media (max-width: 768px) {
+    .message-content img {
+        max-height: 200px;
+    }
+}
+
+/* Image analysis result styling */
+.message.bot-message .message-content h3,
+.message.bot-message .message-content h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.message.bot-message .message-content strong {
+    color: var(--text-primary);
+}
+
+.message.bot-message .message-content em {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Warning/Important text in analysis */
+.message.bot-message .message-content:contains("⚠️"),
+.message.bot-message .message-content:contains("IMPORTANT") {
+    border-left: 3px solid var(--color-warning);
+    padding-left: 15px;
+}
+
+/* Success indicators in analysis */
+.message.bot-message .message-content:contains("✅") {
+    color: var(--color-success);
+}
